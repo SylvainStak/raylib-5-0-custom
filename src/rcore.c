@@ -480,21 +480,8 @@ void __stdcall Sleep(unsigned long msTimeout);              // Required for: Wai
 const char *TextFormat(const char *text, ...);              // Formatting of text with variables to 'embed'
 #endif // !SUPPORT_MODULE_RTEXT
 
-// Include platform-specific submodules
-#if defined(PLATFORM_DESKTOP)
-    #include "platforms/rcore_desktop.c"
-#elif defined(PLATFORM_DESKTOP_SDL)
-    #include "platforms/rcore_desktop_sdl.c"
-#elif defined(PLATFORM_WEB)
-    #include "platforms/rcore_web.c"
-#elif defined(PLATFORM_DRM)
-    #include "platforms/rcore_drm.c"
-#elif defined(PLATFORM_ANDROID)
-    #include "platforms/rcore_android.c"
-#else
-    // TODO: Include your custom platform backend!
-    // i.e software rendering backend or console backend!
-#endif
+// Only include desktop
+#include "rcore_desktop.c"
 
 //----------------------------------------------------------------------------------
 // Module Functions Definition: Window and Graphics Device
