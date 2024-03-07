@@ -43,7 +43,6 @@ raylib: $(OBJS)
 	ar rcs ../libraylib.a $(OBJS)
 	@echo "raylib static library generated libraylib.a!"
 
-rcore.o : rcore_desktop.c
 rcore.o : rcore.c raylib.h rlgl.h utils.h raymath.h rcamera.h rgestures.h
 	$(CC) -c $< $(CFLAGS) $(IFLAGS)
 
