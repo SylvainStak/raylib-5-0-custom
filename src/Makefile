@@ -37,10 +37,10 @@ OBJS = rcore.o rshapes.o rtextures.o rtext.o utils.o rglfw.o rmodels.o raudio.o
 all: raylib
 
 clean:
-	rm -fv *.o ../libraylib.a
+	rm -fv *.o libraylib.a
 
 raylib: $(OBJS)
-	ar rcs ../libraylib.a $(OBJS)
+	ar rcs libraylib.a $(OBJS)
 	@echo "raylib static library generated libraylib.a!"
 
 rcore.o : rcore.c raylib.h rlgl.h utils.h raymath.h rcamera.h rgestures.h
